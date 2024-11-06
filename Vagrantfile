@@ -37,14 +37,4 @@ Vagrant.configure("2") do |config|
       vb.cpus = 2
     end
   end
-  config.vm.define "teste" do |teste|
-    teste.vm.box = "shekeriev/debian-11"
-    teste.vm.hostname = "teste"
-    teste.vm.network "private_network", ip: "172.17.177.103"
-    teste.vm.provider "virtualbox" do |vb|
-      vb.name = "teste"
-      vb.memory = "512"
-      vb.cpus = 2
-    end
-  end
 end        
