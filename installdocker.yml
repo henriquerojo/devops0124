@@ -37,6 +37,13 @@
         name: 
           - docker-ce
         state: present
+    - name: Instalar Docker Compose
+      shell:
+        curl -sSL https://github.com/docker/compose/releases/latest/download/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose
+        && chmod +x /usr/local/bin/docker-compose
+      args:
+        executable: /bin/bash
+        creates: /usr/local/bin/docker-compose
     - name: Adicionar usuário ao grupo docker
       user:
         name: vagrant
